@@ -1,4 +1,5 @@
 <title>Triki</title>
+<link rel="stylesheet" href="Triki.css">
 
 <h1>Triki</h1>
 
@@ -32,7 +33,7 @@
 var elementos = Array.from(document.querySelectorAll ('button'))
 elementos.forEach (function (elemento) {
   elemento.addEventListener('click', function() {
-    marcar (this, 'X')
+    marcar (this, 'O')
   })
 })
 
@@ -42,18 +43,6 @@ function marcar (boton, jugador) {
   boton.textContent = jugador
 }
 
-
-
-console.log(3*2)
-
-function hornearbrownie () {
-    var brownie = {
-        color: 'cafe',
-        dulce: 'arequipe',
-        cantidad: 8,
-        rico: 'true'}
-    return brownie
-}
 
 </script>
 
