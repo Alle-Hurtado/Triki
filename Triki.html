@@ -1,0 +1,95 @@
+<title>Triki</title>
+
+<h1>Triki</h1>
+
+<h2>Instrucciones:</h2>
+
+<h3>
+<ul>
+<li>De a dos jugadores</li>
+<li>Cada uno elige una ficha</li>
+<li>De a turnos van a ir poniendo las fichas</li>
+<li>Gana el primero que ponga tres en linea, puede ser: orizontal, vertical o diagonal</li>
+</ul>
+</h3>
+
+<div>
+
+<button style="width: 70px;"></button> 
+<button></button>
+<button></button>
+<button></button>
+<button></button>
+<button></button>
+<button></button>
+<button></button>
+<button></button>
+
+</div>
+
+
+<script>
+var elementos = Array.from(document.querySelectorAll ('button'))
+elementos.forEach (function (elemento) {
+  elemento.addEventListener('click', function() {
+    marcar (this, 'X')
+  })
+})
+
+
+
+function marcar (boton, jugador) {
+  boton.textContent = jugador
+}
+
+
+
+console.log(3*2)
+
+function hornearbrownie () {
+    var brownie = {
+        color: 'cafe',
+        dulce: 'arequipe',
+        cantidad: 8,
+        rico: 'true'}
+    return brownie
+}
+
+</script>
+
+<br>
+<br>
+Instrucciones: <br>
+
+1. empezar con X <br>
+2. poner x en algun cuadro <br>
+3. elegir o <br>
+4. poner o en algun cuadro que no sea en el que esta X <br>
+5. elegir X <br>
+6. poner x en algun cuadro que no este ocupado <br>
+7. elegir o <br>
+8. poner o en algun cuadro desocupado <br>
+9. elegir x <br>
+10. poner x en algun cuadro desocupado <br>
+11. verificar si se hizo Triki <br>
+12. si no hay triki, elegir o <br>
+13. si hay triki avisar que x gano <br>
+14. poner o en algun cuadro desocupado <br>
+15. verificar si hay triki <br>
+16. si no hay triki, elegir x <br>
+17. si hay triki, avisar que o gano <br>
+18. elegir x <br>
+19. poner x en algun cuadro desocupado <br>
+20. verificar si hay triki <br>
+21. si hay triki, avisar que x gano <br>
+22. si no, elegir o <br>
+23. poner o en algun cuadro desocupado <br>
+24. verificar si hay triki <br>
+25. si hay triki, avisar que o gano <br>
+26. si no, elegir x <br>
+27. poner x en algun cuadro desocupado <br>
+28. verificar si hay triki <br>
+29. si hay triki, avisar que x gano <br>
+30. si no, terminar juego
+
+

@@ -1,0 +1,17 @@
+div
+{
+  
+width: 6.5cm;
+height: 6.5cm;
+background-color: rgb(192, 113, 23);
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+display: flex;
+}
+
+button
+{
+  height: 2cm;  
+  width: 2cm;
+}
