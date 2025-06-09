@@ -30,17 +30,30 @@
 
 
 <script>
+
+var Turno_actual = 'X' 
+
 var elementos = Array.from(document.querySelectorAll ('button'))
 elementos.forEach (function (elemento) {
   elemento.addEventListener('click', function() {
-    marcar (this, 'O')
+    marcar (this, Turno_actual)
+    Turno_actual = intercalar (Turno_actual)           
   })
 })
 
-
-
 function marcar (boton, jugador) {
   boton.textContent = jugador
+}
+
+
+function intercalar (Turno) {
+ if (Turno=='X')   {
+  return 'O'
+ }
+
+ if (Turno=='O')   {
+  return 'X'
+ }
 }
 
 
