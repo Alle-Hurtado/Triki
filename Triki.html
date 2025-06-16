@@ -37,7 +37,8 @@ var elementos = Array.from(document.querySelectorAll ('button'))
 elementos.forEach (function (elemento) {
   elemento.addEventListener('click', function() {
     marcar (this, Turno_actual)
-    Turno_actual = intercalar (Turno_actual)           
+    Turno_actual = intercalar (Turno_actual)     
+    elemento.disabled = true
   })
 })
 
