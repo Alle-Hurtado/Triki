@@ -37,8 +37,9 @@ var elementos = Array.from(document.querySelectorAll ('button'))
 elementos.forEach (function (elemento) {
   elemento.addEventListener('click', function() {
     marcar (this, Turno_actual)
-    Turno_actual = intercalar (Turno_actual)     
     elemento.disabled = true
+    revisar_triki ()
+    Turno_actual = intercalar (Turno_actual)    
   })
 })
 
@@ -57,6 +58,31 @@ function intercalar (Turno) {
  }
 }
 
+function revisar_triki () {
+  
+  var boton_1 = elementos [0]
+  var boton_2 = elementos [1]
+  var boton_3 = elementos [2]
+  var boton_4 = elementos [3]
+  var boton_5 = elementos [4]
+  var boton_6 = elementos [5]
+  var boton_7 = elementos [6]
+  var boton_8 = elementos [7]
+  var boton_9 = elementos [8]
+
+  if (boton_1.disabled == true && boton_2.disabled == true && boton_3.disabled == true && boton_1.textContent == Turno_actual && boton_2.textContent == Turno_actual && boton_3.textContent == Turno_actual)  {
+   alert ('Ha ganado turno actual') 
+  }
+
+  if (boton_4.disabled == true && boton_5.disabled == true && boton_6.disabled == true && boton_4.textContent == Turno_actual && boton_5.textContent == Turno_actual && boton_6.textContent == Turno_actual)  {
+   alert ('Ha ganado turno actual') 
+  }
+  
+if (boton_7.disabled == true && boton_8.disabled == true && boton_9.disabled == true && boton_7.textContent == Turno_actual && boton_8.textContent == Turno_actual && boton_9.textContent == Turno_actual)  {
+   alert ('Ha ganado turno actual') 
+  }
+
+}
 
 </script>
 
@@ -94,5 +120,3 @@ Instrucciones: <br>
 28. verificar si hay triki <br>
 29. si hay triki, avisar que x gano <br>
 30. si no, terminar juego
-
-
