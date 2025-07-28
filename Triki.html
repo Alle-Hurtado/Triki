@@ -10,7 +10,7 @@
 <li>De a dos jugadores</li>
 <li>Cada uno elige una ficha</li>
 <li>De a turnos van a ir poniendo las fichas</li>
-<li>Gana el primero que ponga tres en linea, puede ser: orizontal, vertical o diagonal</li>
+<li>Gana el primero que ponga tres en linea, puede ser: horizontal, vertical o diagonal</li>
 </ul>
 </h3>
 
@@ -38,7 +38,14 @@ elementos.forEach (function (elemento) {
   elemento.addEventListener('click', function() {
     marcar (this, Turno_actual)
     elemento.disabled = true
-    revisar_triki ()
+    if (revisar_triki ()) {
+        elementos.forEach (
+          function (button) {
+           button.disabled = true
+          }
+        )
+      alert ('Ganó ' + Turno_actual)
+    }
     Turno_actual = intercalar (Turno_actual)    
   })
 })
@@ -47,40 +54,44 @@ function marcar (boton, jugador) {
   boton.textContent = jugador
 }
 
+function revisar_triki () {
+  return tres_en_linea.some (function(posiciones) {
+    return revisar_condicion_ganadora (
+      elementos [posiciones[0]],
+      elementos [posiciones[1]],
+      elementos [posiciones[2]]
+    )
+  })
+
+}
 
 function intercalar (Turno) {
  if (Turno=='X')   {
   return 'O'
- }
+  }
 
  if (Turno=='O')   {
   return 'X'
- }
+  }
 }
 
-function revisar_triki () {
-  
-  var boton_1 = elementos [0]
-  var boton_2 = elementos [1]
-  var boton_3 = elementos [2]
-  var boton_4 = elementos [3]
-  var boton_5 = elementos [4]
-  var boton_6 = elementos [5]
-  var boton_7 = elementos [6]
-  var boton_8 = elementos [7]
-  var boton_9 = elementos [8]
+var tres_en_linea = [
+[0,1,2],
+[3,4,5],
+[6,7,8],
+[0,4,8],
+[2,4,6],
+[0,3,6],
+[1,4,7],
+[2,5,8]
+]
 
-  if (boton_1.disabled == true && boton_2.disabled == true && boton_3.disabled == true && boton_1.textContent == Turno_actual && boton_2.textContent == Turno_actual && boton_3.textContent == Turno_actual)  {
-   alert ('Ha ganado turno actual') 
+function revisar_condicion_ganadora (boton_1, boton_2, boton_3) {
+  if (boton_1.disabled == true && boton_2.disabled == true && boton_3.disabled == true && boton_1.textContent == Turno_actual && boton_2.textContent == Turno_actual && boton_3.textContent == Turno_actual) {
+    return true 
   }
 
-  if (boton_4.disabled == true && boton_5.disabled == true && boton_6.disabled == true && boton_4.textContent == Turno_actual && boton_5.textContent == Turno_actual && boton_6.textContent == Turno_actual)  {
-   alert ('Ha ganado turno actual') 
-  }
-  
-if (boton_7.disabled == true && boton_8.disabled == true && boton_9.disabled == true && boton_7.textContent == Turno_actual && boton_8.textContent == Turno_actual && boton_9.textContent == Turno_actual)  {
-   alert ('Ha ganado turno actual') 
-  }
+  return false
 
 }
 
