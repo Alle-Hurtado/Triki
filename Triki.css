@@ -15,3 +15,12 @@ button
   height: 2cm;  
   width: 2cm;
 }
+
+button.reiniciar
+{
+   height: 2cm;  
+  width: 2cm;
+  background-color: rgb(175, 70, 0);
+  border-radius: 50%;
+  display: none;
+}
