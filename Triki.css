@@ -1,8 +1,8 @@
 div
 {
   
-width: 6.5cm;
-height: 6.5cm;
+width: 12cm;
+height: 12cm;
 background-color: rgb(192, 113, 23);
 flex-wrap: wrap;
 align-items: center;
@@ -12,8 +12,9 @@ display: flex;
 
 button
 {
-  height: 2cm;  
-  width: 2cm;
+  height: 30%;  
+  width: 30%;
+  font-size: 110px;
 }
 
 button.reiniciar
@@ -23,4 +24,29 @@ button.reiniciar
   background-color: rgb(175, 70, 0);
   border-radius: 50%;
   display: none;
+}
+
+button:disabled {
+  opacity: 1;
+  color: inherit;
+  background: inherit;
+  cursor: default;
+} 
+
+.divtriki {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 12cm;
+  height: 12cm;
+  background-color: rgb(192, 113, 23);
+}
+
+h1 {
+  text-align: center;
+  font-size: 3cm;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
